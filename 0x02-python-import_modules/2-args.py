@@ -11,4 +11,4 @@ if __name__ == "__main__":
     elif (argLen > 1):
         print("{:d} arguments:".format(argLen))
         for i in range(1, argLen + 1):
-            print("{:d} : {}".format(i, argu[i]))
+            print("{:d}: {}".format(i, argu[i]))
