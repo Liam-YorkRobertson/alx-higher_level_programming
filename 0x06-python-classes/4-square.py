@@ -7,12 +7,14 @@ class Square:
 
     def __init__(self, size=0):
         """Initialize a new Square."""
+        
         self.size = size
 
     @property
     def size(self):
         """Getting and setting size."""
-        return (self.__size)
+        
+       return (self.__size)
 
     @size.setter
     def size(self, value):
