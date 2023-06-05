@@ -3,5 +3,8 @@
 Create an empty rectangle class.
 """
 
-class Rectangle():
+class Rectangle:
+    """
+    Represents a rectangle.
+    """
     pass
