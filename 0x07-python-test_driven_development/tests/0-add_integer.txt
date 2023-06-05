@@ -1,43 +1,35 @@
-"""
-Doctest for def add_integer(a, b=98) function.
-"""
+# 0-add_integer.txt
 
 """
-Adds two integers.
+This is a doctest file for the add_integer function in 0-add_integer.py
 
-Args:
-    a (int or float): The first integer or float.
-    b (int or float, optional): The second integer or float. Defaults to 98.
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(2, 3)
+5
 
-Returns:
-    int: The sum of a and b.
+>>> add_integer(5.5, 10.5)
+15
 
-Raises:
-    TypeError: If a or b is not an integer or float.
+>>> add_integer(4.2, 3)
+7
 
-Examples:
-    >>> add_integer(5, 10)
-    15
+>>> add_integer(7, 1.5)
+8
 
-    >>> add_integer(3.14, 7)
-    10
-
-    >>> add_integer(10, 5.5)
-    15
-
-    >>> add_integer(2.5, 3.7)
-    5
-
-    >>> add_integer(2.5)
-    100
-
-    >>> add_integer(5, '10')
-    Traceback (most recent call last):
+>>> add_integer("2", 3)
+Traceback (most recent call last):
     ...
-    TypeError: a must be an integer or b must be an integer
+TypeError: a must be an integer or float
 
-    >>> add_integer('3.14', 7)
-    Traceback (most recent call last):
+>>> add_integer(2, "3")
+Traceback (most recent call last):
     ...
-    TypeError: a must be an integer or b must be an integer
+TypeError: b must be an integer or float
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(-5, 10)
+5
+
 """
