@@ -6,7 +6,7 @@ Prints the name in the format "My name is <first name> <last name>".
 
 def say_my_name(first_name, last_name=""):
     """
-    Prints the name in the format "My name is <first name> <last name>".
+    Prints name in the format "My name is <first name> <last name>".
     Args:
         first_name (str): The first name.
         last_name (str, optional): The last name. Defaults to an empty string.
