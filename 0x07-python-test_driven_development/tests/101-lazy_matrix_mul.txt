@@ -1,0 +1,35 @@
+
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[7, 8], [9, 10], [11, 12]])
+[[58.0, 64.0], [139.0, 154.0]]
+
+>>> lazy_matrix_mul([[1, 2, 3]], [[4, 5], [6, 7], [8, 9]])
+[[40.0, 46.0]]
+
+>>> lazy_matrix_mul([[1, 2, 3]], [[4], [5], [6]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
+
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, '6']], [[7, 8], [9, 10], [11, 12]])
+Traceback (most recent call last):
+    ...
+TypeError: invalid data type for einsum
+
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]])
+[[39.0, 42.0, 45.0], [99.0, 108.0, 117.0]]
+
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[7, 8], [9, 10]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
+
+>>> lazy_matrix_mul([[1, 2, 3]], [[4], [5], [6]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
+
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[7, 8], [9, 10], [11, 12], [13, 14]])
+Traceback (most recent call last):
+    ...
+ValueError: each row of m_b must be of the same size
