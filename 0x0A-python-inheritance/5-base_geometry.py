@@ -3,6 +3,7 @@
 Defines empty function BaseGeometry.
 """
 
+
 class BaseGeometry:
     """
     Represents base geometry.
