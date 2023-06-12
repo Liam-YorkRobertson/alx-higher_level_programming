@@ -3,6 +3,7 @@
 Defines a base geomery class BaseGeometry.
 """
 
+
 class BaseGeometry:
     """
     Represents base geometry.
