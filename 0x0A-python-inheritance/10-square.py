@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Define a Rectangle (child of BaseGeometry) subclass class Square (grandchild)
+Define a Rectangle (child of BaseGeometry) subclass class Square (grandchild).
 """
 Rectangle = __import__('9-rectangle').Rectangle
 
