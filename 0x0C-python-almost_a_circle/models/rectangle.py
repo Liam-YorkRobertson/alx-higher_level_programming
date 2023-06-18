@@ -104,3 +104,10 @@ class Rectangle(Base):
         """
         for _ in range(self.__height):  # _ loops indefinitely until specific
             print("#" * self.__width)  # number of times
+
+    def __str__(self):
+        """
+        Returns str representation of Rectangle.
+        """
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
+                f"{self.__width}/{self.__height}")
