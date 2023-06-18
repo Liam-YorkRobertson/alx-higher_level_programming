@@ -96,16 +96,16 @@ class Rectangle(Base):
         """
         Returns the area of the Rectangle instance.
         """
-        return (self.__width * self.__height)
+        return (self.width * self.height)
 
     def display(self):
         """
         Returns a visual Rectangle made of #'s of the Rectangle instance.
         """
-        for _ in range(self.__y):
+        for _ in range(self.y):
             print()  # prints empty line
-        for _ in range(self.__height):  # _ loops indefinitely until specific
-            print(" " * self.__x + "#" * self.__width)  # number of times
+        for _ in range(self.height):  # _ loops indefinitely until specific
+            print(" " * self.x + "#" * self.width)  # number of times
 
     def __str__(self):
         """
@@ -113,3 +113,19 @@ class Rectangle(Base):
         """
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
                 f"{self.__width}/{self.__height}")
+
+    def update(self, *args):
+        """
+        Updates attributes of Rectangle using args.
+        """
+        if len(args) > 0:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
