@@ -102,8 +102,10 @@ class Rectangle(Base):
         """
         Returns a visual Rectangle made of #'s of the Rectangle instance.
         """
+        for _ in range(self.__y):
+            print()  # prints empty line
         for _ in range(self.__height):  # _ loops indefinitely until specific
-            print("#" * self.__width)  # number of times
+            print(" " * self.__x + "#" * self.__width)  # number of times
 
     def __str__(self):
         """
