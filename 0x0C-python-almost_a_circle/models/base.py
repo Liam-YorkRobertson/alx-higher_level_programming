@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import json
 """
 Defines Base function.
 """
+import json
 
 
 class Base:
