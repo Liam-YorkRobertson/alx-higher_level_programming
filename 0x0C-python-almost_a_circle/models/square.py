@@ -37,4 +37,29 @@ class Square(Rectangle):
         """
         Returns string representation of this Square instance.
         """
-        return (f"[square] ({self.id}) {self.x}/{self.y} - {self.width}")
+
+        return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
+
+    def update(self, *args, **kwargs):
+        """
+        Updates Square using args.
+        """
+
+        if args:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.size = args[1]
+            if len(args) > 2:
+                self.x = args[2]
+            if len(args) > 3:
+                self.y = args[3]
+        elif kwargs:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'size' in kwargs:
+                self.size = kwargs['size']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']

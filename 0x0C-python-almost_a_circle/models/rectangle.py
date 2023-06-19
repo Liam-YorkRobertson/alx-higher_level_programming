@@ -87,7 +87,7 @@ class Rectangle(Base):
         Getter for y.
         """
 
-        return (self.__width)
+        return (self.__y)
 
     @y.setter
     def y(self, value):
@@ -123,15 +123,15 @@ class Rectangle(Base):
         Returns str representation of Rectangle.
         """
 
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
-                f"{self.__width}/{self.__height}")
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+                f"{self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """
         Updates attributes of Rectangle using args.
         """
 
-        if len(args) > 0:
+        if args:
             if len(args) >= 1:
                 self.id = args[0]
             if len(args) >= 2:
@@ -142,7 +142,6 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) >= 5:
                 self.y = args[4]
-
         else:
             for key, value in kwargs.items():
                 if key == "id":
