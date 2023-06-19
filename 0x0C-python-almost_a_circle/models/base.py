@@ -69,10 +69,27 @@ class Base:
         """
 
         if cls.__name__ == "Rectangle":
-            new_inst  = cls(1, 1)
+            new_inst = cls(1, 1)
         elif cls.__name__ == "Square":
             new_inst = cls(1)
 
         new_inst.update(**dictionary)
 
         return (new_inst)
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances loaded from a JSON file.
+        """
+
+        filename = cls.__name__ + ".json"
+
+        try:
+            with open(filename, 'r') as file:
+                json_string = file.read()
+                list_dicts = cls.from_json_string(json_string)
+                inst = [cls.create(**dictionary) for dictionary in list_dicts]
+                return (inst)
+        except FileNotFoundError:
+            return ([])
