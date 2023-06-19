@@ -9,6 +9,7 @@ class Rectangle(Base):
     """
     Class Rectangle that inherits from class Base.
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Iniitializes a Rectangle instance.
@@ -25,6 +26,7 @@ class Rectangle(Base):
         """
         Getter for width.
         """
+
         return (self.__width)
 
     @width.setter
@@ -32,6 +34,7 @@ class Rectangle(Base):
         """
         Setter for width.
         """
+
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -43,6 +46,7 @@ class Rectangle(Base):
         """
         Getter for height.
         """
+
         return (self.__height)
 
     @height.setter
@@ -50,6 +54,7 @@ class Rectangle(Base):
         """
         Setter for height.
         """
+
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -61,6 +66,7 @@ class Rectangle(Base):
         """
         Getter for x.
         """
+
         return (self.__x)
 
     @x.setter
@@ -68,6 +74,7 @@ class Rectangle(Base):
         """
         Setter for x.
         """
+
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -79,6 +86,7 @@ class Rectangle(Base):
         """
         Getter for y.
         """
+
         return (self.__width)
 
     @y.setter
@@ -86,6 +94,7 @@ class Rectangle(Base):
         """
         Setter for y.
         """
+
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -96,12 +105,14 @@ class Rectangle(Base):
         """
         Returns the area of the Rectangle instance.
         """
+
         return (self.width * self.height)
 
     def display(self):
         """
         Returns a visual Rectangle made of #'s of the Rectangle instance.
         """
+
         for _ in range(self.y):
             print()  # prints empty line
         for _ in range(self.height):  # _ loops indefinitely until specific
@@ -111,6 +122,7 @@ class Rectangle(Base):
         """
         Returns str representation of Rectangle.
         """
+
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
                 f"{self.__width}/{self.__height}")
 
@@ -118,6 +130,7 @@ class Rectangle(Base):
         """
         Updates attributes of Rectangle using args.
         """
+
         if len(args) > 0:
             if len(args) >= 1:
                 self.id = args[0]
