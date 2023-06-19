@@ -61,3 +61,18 @@ class Base:
 
         with open(filename, 'w') as file:
             file.write(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all attributes already set.
+        """
+
+        if cls.__name__ == "Rectangle":
+            new_inst  = cls(1, 1)
+        elif cls.__name__ == "Square":
+            new_inst = cls(1)
+
+        new_inst.update(**dictionary)
+
+        return (new_inst)
