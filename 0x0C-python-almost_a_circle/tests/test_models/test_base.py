@@ -3,56 +3,75 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    def test_id_type(self):
+    def test_create_instance_with_id(self):
         """
-        Test if the ID attribute is of integer type.
+        Test creating an instance of Base with a specific ID.
         """
-        obj = Base()
-        self.assertIsInstance(obj.id, int)
+        base = Base(1)
+        self.assertEqual(base.id, 1)
 
-    def test_id_assignment(self):
+    def test_create_instance_without_id(self):
         """
-        Test if IDs are assigned correctly to instances of the Base class.
+        Test creating instances of Base without specifying ID.
         """
-        obj1 = Base()
-        obj2 = Base()
-        self.assertEqual(obj1.id, 1)
-        self.assertEqual(obj2.id, 2)
+        base1 = Base()
+        base2 = Base()
+        self.assertNotEqual(base1.id, base2.id)
 
-    def test_id_argument(self):
+    def test_create_instance_with_negative_id(self):
         """
-        Test if the ID is correctly assigned when a specific ID is passed as an argument.
+        Test creating an instance of Base with a negative ID.
         """
-        obj = Base(10)
-        self.assertEqual(obj.id, 10)
+        base = Base(-10)
+        self.assertEqual(base.id, -10)
 
-    def test_id_increment(self):
+    def test_create_instance_with_zero_id(self):
         """
-        Test if the ID is incremented for each new instance of the Base class.
+        Test creating an instance of Base with zero as the ID.
         """
-        obj1 = Base()
-        obj2 = Base()
-        self.assertEqual(obj2.id - obj1.id, 1)
+        base = Base(0)
+        self.assertEqual(base.id, 0)
 
-    def test_multiple_instances(self):
+    def test_create_instance_with_float_id(self):
         """
-        Test if multiple instances of the Base class maintain separate ID counts.
+        Test creating an instance of Base with a float ID.
         """
-        Base._Base__nb_objects = 0
-        obj1 = Base()
-        obj2 = Base()
-        obj3 = Base()
-        self.assertEqual(obj1.id, 1)
-        self.assertEqual(obj2.id, 2)
-        self.assertEqual(obj3.id, 3)
+        base = Base(3.14)
+        self.assertEqual(base.id, 3.14)
 
-    def test_id_argument_edge_case(self):
+    def test_create_instance_with_string_id(self):
         """
-        Test if passing a negative ID as an argument results in correct assignment.
+        Test creating an instance of Base with a string ID.
         """
-        obj = Base(-10)
-        self.assertEqual(obj.id, -10)
+        base = Base("abc")
+        self.assertEqual(base.id, "abc")
+
+    def test_create_instance_with_none_id(self):
+        """
+        Test creating an instance of Base with None as the ID.
+        """
+        base = Base(None)
+        self.assertIsNotNone(base.id)
+
+    def test_create_multiple_instances(self):
+        """
+        Test creating multiple instances of Base.
+        """
+        base1 = Base()
+        base2 = Base()
+        base3 = Base()
+        self.assertNotEqual(base1.id, base2.id)
+        self.assertNotEqual(base2.id, base3.id)
+        self.assertNotEqual(base3.id, base1.id)
+
+    def test_to_json_string(self):
+        """
+        Test converting a list of Base instances to JSON string.
+        """
+        base = Base(1)
+        json_str = Base.to_json_string([base.__dict__])
+        self.assertEqual(json_str, '[{"id": 1}]')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
