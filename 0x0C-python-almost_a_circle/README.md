@@ -1,0 +1,1 @@
+In this repository we are going to be practicing all the python concepts we have learnt thus far. Including Import, Exceptions, Class, Private attribute, Getter/Setter, Class method, Static method, Inheritance, Unittest, Read/Write file, args and kwargs, Serialization/Deserialization, JSON
