@@ -1,7 +1,7 @@
-#Learning Objectives
+# Learning Objectives
 + At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-#General
+# General
 + How to fetch internet resources with the Python package urllib
 + How to decode urllib body response
 + How to use the Python package requests #requestsiswaysimplerthanurllib
