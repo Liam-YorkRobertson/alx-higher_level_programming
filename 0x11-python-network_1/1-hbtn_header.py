@@ -8,8 +8,7 @@ import sys
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        req = urllib.request.Request(sys.argv[1])
-        with urllib.request.urlopen(req) as response:
-            head = response.getheader('X-Request-Id')
-            print(head)
+    req = urllib.request.Request(sys.argv[1])
+    with urllib.request.urlopen(req) as response:
+        head = response.getheader('X-Request-Id')
+        print(head)
