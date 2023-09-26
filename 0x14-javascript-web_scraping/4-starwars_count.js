@@ -13,6 +13,6 @@ request.get(url, function (err, resp, body) {
     const hasWedgeAntilles = data.results.filter(function (film) {
       return film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${id}/`);
     });
-    console.log(hasWedgeAntilles.length);
+    console.log(hasWedgeAntilles.length.toString());
   }
 });
