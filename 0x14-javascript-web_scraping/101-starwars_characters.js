@@ -12,13 +12,22 @@ request.get(url, function (err, resp, body) {
     const movie = JSON.parse(body);
     const chars = movie.characters;
 
-    chars.forEach(function (charUrl) {
-      request.get(charUrl, function (err2, resp2, charBody) {
-        if (!err2) {
-          const char = JSON.parse(charBody);
-          console.log(char.name);
+    function printChars (chars) {
+      if (chars.length === 0) {
+        return;
+      }
+
+      const charUrl = chars.shift();
+      request.get(charUrl, function (err2, resp2, body2) {
+        if (err2) {
+          console.log(err2);
+        } else {
+          const charData = JSON.parse(body2);
+          console.log(charData.name);
+          printChars(chars);
         }
       });
-    });
+    }
+    printChars(chars);
   }
 });
