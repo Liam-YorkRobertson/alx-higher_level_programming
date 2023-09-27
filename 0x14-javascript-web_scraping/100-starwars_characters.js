@@ -15,8 +15,8 @@ request.get(url, function (err, resp, body) {
     chars.forEach(function (charUrl) {
       request.get(charUrl, function (err2, resp2, charBody) {
         if (err2) {
-	  console.log(err);
-	} else {
+          console.log(err);
+        } else {
           const char = JSON.parse(charBody);
           console.log(char.name);
         }
